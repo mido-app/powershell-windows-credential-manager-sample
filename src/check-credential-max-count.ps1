@@ -1,4 +1,4 @@
-$TargetNamePrefix = "MidoApp_Powershell_Sample"
+$TargetNamePrefix = "MidoApp_MaxCount_Test"
 $Password = "password"
 $CreateCredCount = 1115
 $SuccessfullyCreatedCount = 0
@@ -9,7 +9,6 @@ try {
   for ($i=0; $i -lt $CreateCredCount; $i++) {
     echo "Creating ${i}th Generic Credential to Windows Credential Manager"
     $TargetName = "${TargetNamePrefix}_${i}"
-    echo $TargetName
     SaveGenericSessionCredential $TargetName $Password
     $SuccessfullyCreatedCount = $SuccessfullyCreatedCount + 1
   }
