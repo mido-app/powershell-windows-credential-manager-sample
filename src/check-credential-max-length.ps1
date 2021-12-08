@@ -6,14 +6,14 @@ $ItemRemaining = $False
 
 function CreatePasswordWithLength($Length) {
   $Password = ""
-  for ($i=0; i -lt $Length; $i++) {
+  for ($i=0; $i -lt $Length; $i++) {
     $Password = $Password + "a"
   }
   return $Password
 }
 
 try {
-  for($i=1; i -le $MaxLength; $i++) {
+  for($i=1; $i -le $MaxLength; $i++) {
     echo "Creating Generic Credential with Password Length ${i} to Windows Credential Manager"
     $ItemRemaining = $True
     $Password = CreatePasswordWithLength $i

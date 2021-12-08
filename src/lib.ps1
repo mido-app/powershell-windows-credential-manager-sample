@@ -3,17 +3,20 @@ function SaveGenericSessionCredential($TargetName, $Password) {
     -Type GENERIC `
     -Target $TargetName `
     -Persist SESSION `
-    -Password $Password
+    -Password $Password `
+    -ErrorAction Stop
 }
 
 function GetGenericCredential($TargetName) {
   Get-StoredCredential `
     -Type GENERIC `
-    -Target $TargetName
+    -Target $TargetName `
+    -ErrorAction Stop
 }
 
 function RemoveGenericCredential($TargetName) {
   Remove-StoredCredential `
     -Type GENERIC `
-    -Target $TargetName
+    -Target $TargetName `
+    -ErrorAction Stop
 }
